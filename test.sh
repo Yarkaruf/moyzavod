@@ -1,0 +1,2 @@
+service zavod stop
+./zavod

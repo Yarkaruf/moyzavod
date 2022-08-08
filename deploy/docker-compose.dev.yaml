@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: moyzavod
+      POSTGRES_PASSWORD: somesecretpassword
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  app:
+    build: ../server
+    restart: always
+    env_file:
+      - ${TAG}.env
+    ports:
+      - 443:443
+    volumes:
+      - ../public:/app/public
+
+  mail:
+    image: bytemark/smtp
+    restart: always
+
+volumes:
+  db:

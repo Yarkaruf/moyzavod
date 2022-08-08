@@ -1,0 +1,8 @@
+/files_storage/
+/node_modules/
+/public/build/
+!/public/build/styles.min.css
+/proto/opencascade.js-examples/node_modules/
+sessions.badger
+.DS_Store
+*.exe
